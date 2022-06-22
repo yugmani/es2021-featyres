@@ -1,6 +1,7 @@
 // Import stylesheets
 import './style.css';
 
+// ********************************************
 // String replaceAll() method
 // ****************************************
 
@@ -11,6 +12,7 @@ let newStr = str.replaceAll('-', ' ');
 console.log(newStr);
 // a b c d
 
+// ********************************************
 // Promise.any
 // *******************************************
 
@@ -88,6 +90,7 @@ Promise.any([promise3, promise2]).then(
 
 //Promise is partially resolved: Promise two
 
+// ********************************************
 // PROMISE.RACE
 // ************************************************
 
@@ -101,7 +104,6 @@ Promise.race([promise1, promise4]).then(
     console.log('Race error: ', e);
   }
 );
-
 
 // Promise race: Promise one
 
@@ -117,3 +119,35 @@ Promise.race([promise4, promise2]).then(
 );
 
 // Promise race: Promise two
+
+// ********************************************
+// Logical assignment operator
+// *********************************************
+
+//To check whether the value is falsy and only assign a new value when it is falsy
+let val;
+if (!val) {
+  console.log(val);
+  val = 100;
+}
+
+console.log('Value: ', val);
+// undefined
+// Value: 100
+
+// Using the logical assignment operator,
+let name;
+// let name = "Mamita";
+name ||= 'Susmita'; //since name is undefined, it is assigned "Susmita"
+
+console.log(`My name is ${name}.`);
+// My name is Susmita.
+
+
+// Using the nullish coalescing operator(??)
+let language
+// language = "Python";
+language ??= "JavaScript" ; // assign "JavaScript" to language when it's null or undefined
+
+console.log("Language: ", language);
+// Language: JavaScript
