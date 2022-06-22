@@ -87,3 +87,33 @@ Promise.any([promise3, promise2]).then(
 );
 
 //Promise is partially resolved: Promise two
+
+// PROMISE.RACE
+// ************************************************
+
+Promise.race([promise1, promise4]).then(
+  (val) => {
+    //success callback
+    console.log('Promise race: ', val);
+  },
+  (e) => {
+    //error callback
+    console.log('Race error: ', e);
+  }
+);
+
+
+// Promise race: Promise one
+
+Promise.race([promise4, promise2]).then(
+  (val) => {
+    //success callback
+    console.log('Promise race: ', val);
+  },
+  (e) => {
+    //error callback
+    console.log('Race error: ', e);
+  }
+);
+
+// Promise race: Promise two
